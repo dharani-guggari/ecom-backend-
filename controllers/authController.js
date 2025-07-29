@@ -61,6 +61,8 @@ const login = async (req, res) => {
     res.cookie("jwt", token, {
       maxAge: 3600000,
       httpOnly: true,
+      secure: true,
+      sameSite: "None", // Adjust this based on your frontend URL
     });
 
     res.json({
